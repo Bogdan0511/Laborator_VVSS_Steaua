@@ -139,11 +139,13 @@ public class MainScreenController implements Initializable,Controller {
         alert.setContentText("Are you sure you want to delete part " + part.getName() + " from parts?");
         Optional<ButtonType> result = alert.showAndWait();
 
-        if (result.get() == ButtonType.OK) {
-            System.out.println("Part deleted.");
-            service.deletePart(part);
-        } else {
-            System.out.println("Canceled part deletion.");
+        if(!result.isEmpty()){
+            if (result.get() == ButtonType.OK) {
+                System.out.println("Part deleted.");
+                service.deletePart(part);
+            } else {
+                System.out.println("Canceled part deletion.");
+            }
         }
     }
 

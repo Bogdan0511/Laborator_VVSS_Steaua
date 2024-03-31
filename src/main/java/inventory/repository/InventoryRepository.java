@@ -41,29 +41,23 @@ public class InventoryRepository {
 	}
 
 	private Part getPartFromString(String line){
+		//moved the duplicated code outside the if blocks
 		Part item=null;
 		if (line==null|| line.equals("")) return null;
 		StringTokenizer st=new StringTokenizer(line, ",");
 		String type=st.nextToken();
+		int id= Integer.parseInt(st.nextToken());
+		inventory.setAutoPartId(id);
+		String name= st.nextToken();
+		double price = Double.parseDouble(st.nextToken());
+		int inStock = Integer.parseInt(st.nextToken());
+		int minStock = Integer.parseInt(st.nextToken());
+		int maxStock = Integer.parseInt(st.nextToken());
 		if (type.equals("I")) {
-			int id= Integer.parseInt(st.nextToken());
-			inventory.setAutoPartId(id);
-			String name= st.nextToken();
-			double price = Double.parseDouble(st.nextToken());
-			int inStock = Integer.parseInt(st.nextToken());
-			int minStock = Integer.parseInt(st.nextToken());
-			int maxStock = Integer.parseInt(st.nextToken());
 			int idMachine= Integer.parseInt(st.nextToken());
 			item = new InhousePart(id, name, price, inStock, minStock, maxStock, idMachine);
 		}
 		if (type.equals("O")) {
-			int id= Integer.parseInt(st.nextToken());
-			inventory.setAutoPartId(id);
-			String name= st.nextToken();
-			double price = Double.parseDouble(st.nextToken());
-			int inStock = Integer.parseInt(st.nextToken());
-			int minStock = Integer.parseInt(st.nextToken());
-			int maxStock = Integer.parseInt(st.nextToken());
 			String company=st.nextToken();
 			item = new OutsourcedPart(id, name, price, inStock, minStock, maxStock, company);
 		}

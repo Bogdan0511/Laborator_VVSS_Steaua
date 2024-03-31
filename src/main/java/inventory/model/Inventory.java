@@ -38,17 +38,13 @@ public class Inventory {
     /**
      * Accepts search parameter and if an ID or name matches input, that product is returned
      * @param searchItem
-     * @return 
+     * @return
      */
     public Product lookupProduct(String searchItem) {
-        boolean isFound = false;
+        //removed unnecessary boolean variable
         for(Product p: products) {
-            if(p.getName().contains(searchItem) || (p.getProductId()+"").equals(searchItem)) return p;
-            isFound = true;
-        }
-        if(isFound == false) {
-            Product product = new Product(0, null, 0.0, 0, 0, 0, null);
-            return product;
+            if(p.getName().contains(searchItem) || (p.getProductId()+"").equals(searchItem))
+                return p;
         }
         return null;
     }
