@@ -1,27 +1,37 @@
 package inventory.service;
 
+import inventory.exception.ValidateException;
 import inventory.model.*;
 import inventory.repository.InventoryRepository;
+import inventory.validator.ValidatorPart;
+import inventory.validator.ValidatorProduct;
 import javafx.collections.ObservableList;
 
 public class InventoryService {
 
-    private InventoryRepository repo;
-    public InventoryService(InventoryRepository repo){
-        this.repo =repo;
+    private final InventoryRepository repo;
+    private final ValidatorPart validatorPart;
+    private final ValidatorProduct validatorProduct;
+    public InventoryService(InventoryRepository repo, ValidatorPart validatorPart, ValidatorProduct validatorProduct){
+        this.repo = repo;
+        this.validatorPart = validatorPart;
+        this.validatorProduct = validatorProduct;
     }
 
-    public void addInhousePart(String name, double price, int inStock, int min, int  max, int partDynamicValue){
+    public void addInhousePart(String name, double price, int inStock, int min, int  max, int partDynamicValue) throws ValidateException {
         InhousePart inhousePart = new InhousePart(repo.getAutoPartId(), name, price, inStock, min, max, partDynamicValue);
+        validatorPart.validate(inhousePart);
         repo.addPart(inhousePart);
     }
-    public void addOutsourcePart(String name, double price, int inStock, int min, int  max, String partDynamicValue){
+    public void addOutsourcePart(String name, double price, int inStock, int min, int  max, String partDynamicValue) throws ValidateException{
         OutsourcedPart outsourcedPart = new OutsourcedPart(repo.getAutoPartId(), name, price, inStock, min, max, partDynamicValue);
+        validatorPart.validate(outsourcedPart);
         repo.addPart(outsourcedPart);
     }
 
-    public void addProduct(String name, double price, int inStock, int min, int  max, ObservableList<Part> addParts){
+    public void addProduct(String name, double price, int inStock, int min, int  max, ObservableList<Part> addParts) throws ValidateException{
         Product product = new Product(repo.getAutoProductId(), name, price, inStock, min, max, addParts);
+        validatorProduct.validate(product);
         repo.addProduct(product);
     }
 

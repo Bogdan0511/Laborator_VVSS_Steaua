@@ -1,0 +1,117 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><title>testspec Prj237 - voir3246_BBT</title>
+<link type="text/css" rel="stylesheet" href="https://www.scs.ubbcluj.ro/testlink/gui/themes/default/css/tl_documents.css" />
+<style type="text/css" media="print">.notprintable { display:none;}</style>
+</head>
+<body>
+<div>
+<div style="float:right;">TestLink Community [configure $tlCfg-&gt;document_generator-&gt;company_name]</div>
+<div>&nbsp;</div><hr />
+<p style="text-align: center;"><img alt="TestLink logo" title="configure using $tlCfg->document_generator->company_logo"  width= height= src="https://www.scs.ubbcluj.ro/testlink/gui/themes/default/images/tl-logo-transparent-25.png" /></p></div>
+<div class="doc_title"><p>Test Specification</p></div>
+<div class="doc_title" style="text-align:left;margin: auto;"><p>Test Project: Prj237<br/>Test Suite: Prj237 - voir3246_BBT</p></div>
+<div class="summary"><p id="printedby">Printed by TestLink on 01/04/2024</p></div>
+<div class="pagefooter" id="copyright">2012 &copy; TestLink Community</div>
+<h1 class="general" style="page-break-before: always">Table Of Contents</h1><div class="toc"><p style="padding-left: 20px;"><b><a href="#toc_1">1.voir3246_BBT</a></b></p>
+<p style="padding-left: 45px;"><a href="#toc_tc21052">P237-34: ECP - valid</a></p><p style="padding-left: 45px;"><a href="#toc_tc21054">P237-35: ECP - invalid</a></p><p style="padding-left: 45px;"><a href="#toc_tc21056">P237-36: BVA - valid</a></p><p style="padding-left: 45px;"><a href="#toc_tc21058">P237-37: BVA - invalid</a></p></div><h1 class="doclevel" >Scope</h1>
+<div class="txtlevel"><p>Testing project for group 237</p></div>
+ <br/><a name='toc_1'></a>
+<h1 class='doclevel'>1.Test Suite : voir3246_BBT</h1>
+<div><p>Se testeaza adaugarea unei piese</p>
+</div><a name="toc_tc21052"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case P237-34: ECP - valid&nbsp;<span style="font-size: 80%;">[Version  : 1]</span></th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="3">voir3246</td></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><p>stoc valid = 10</p>
+</td></tr><tr><td colspan="4"><span class="label">Preconditions:</span><br /><p>denumire: &quot;Bujie&quot;</p>
+
+<p>stoc: 10</p>
+
+<p>pret_unitar: 7</p>
+
+<p>min_bucati: 5</p>
+
+<p>max_bucati: 1000</p>
+
+<p>companie: &quot;Hornbach&quot;</p>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Automated</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Importance:</span></td><td colspan="3">Medium</td></tr>
+<tr><td colspan="4"></td></tr><tr><td > name of the autotest class:</td><td  colspan = "3" >InventoryServiceTest</td></tr>
+<tr><td > name of the test method:</td><td  colspan = "3" >testAddCompanyPartECP</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="3">voir3246_F01:  Adaugarea unei piese [Version : 1]<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span></td><td colspan="3">&nbsp;None<br/></td></tr>
+</table>
+</div>
+<a name="toc_tc21054"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case P237-35: ECP - invalid&nbsp;<span style="font-size: 80%;">[Version  : 1]</span></th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="3">voir3246</td></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><p>stoc invalid = -2</p>
+</td></tr><tr><td colspan="4"><span class="label">Preconditions:</span><br /><p>denumire: &quot;Piulita&quot;</p>
+
+<p>stoc: -2</p>
+
+<p>pret_unitar: 3</p>
+
+<p>min_bucati: 5</p>
+
+<p>max_bucati: 2000</p>
+
+<p>companie: &quot;Dedeman&quot;</p>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Automated</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Importance:</span></td><td colspan="3">Medium</td></tr>
+<tr><td colspan="4"></td></tr><tr><td > name of the autotest class:</td><td  colspan = "3" >InventoryServiceTest</td></tr>
+<tr><td > name of the test method:</td><td  colspan = "3" >testAddCompanyPartECP</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="3">voir3246_F01:  Adaugarea unei piese [Version : 1]<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span></td><td colspan="3">&nbsp;None<br/></td></tr>
+</table>
+</div>
+<a name="toc_tc21056"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case P237-36: BVA - valid&nbsp;<span style="font-size: 80%;">[Version  : 1]</span></th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="3">voir3246</td></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><p>stoc valid = 25</p>
+</td></tr><tr><td colspan="4"><span class="label">Preconditions:</span><br /><p>denumire: &quot;Saiba&quot;</p>
+
+<p>stoc: 25</p>
+
+<p>pret_unitar: 8</p>
+
+<p>min_bucati: 10</p>
+
+<p>max_bucati: 10000</p>
+
+<p>companie: &quot;Dedeman&quot;</p>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Automated</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Importance:</span></td><td colspan="3">Medium</td></tr>
+<tr><td colspan="4"></td></tr><tr><td > name of the autotest class:</td><td  colspan = "3" >InventoryServiceTest</td></tr>
+<tr><td > name of the test method:</td><td  colspan = "3" >testAddCompanyPartBVA</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="3">voir3246_F01:  Adaugarea unei piese [Version : 1]<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span></td><td colspan="3">&nbsp;None<br/></td></tr>
+</table>
+</div>
+<a name="toc_tc21058"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case P237-37: BVA - invalid&nbsp;<span style="font-size: 80%;">[Version  : 1]</span></th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="3">voir3246</td></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><p>stoc invalid = -1</p>
+</td></tr><tr><td colspan="4"><span class="label">Preconditions:</span><br /><p>denumire: &quot;Vata bazaltica&quot;</p>
+
+<p>stoc: -1</p>
+
+<p>pret_unitar: 11</p>
+
+<p>min_bucati: 3</p>
+
+<p>max_bucati: 500</p>
+
+<p>companie: &quot;Adeplast&quot;</p>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Importance:</span></td><td colspan="3">Medium</td></tr>
+<tr><td colspan="4"></td></tr><tr><td > name of the autotest class:</td><td  colspan = "3" >InventoryServiceTest</td></tr>
+<tr><td > name of the test method:</td><td  colspan = "3" >testAddCompanyPartBVA</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="3">voir3246_F01:  Adaugarea unei piese [Version : 1]<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span></td><td colspan="3">&nbsp;None<br/></td></tr>
+</table>
+</div>
+
+</body>
+</html>

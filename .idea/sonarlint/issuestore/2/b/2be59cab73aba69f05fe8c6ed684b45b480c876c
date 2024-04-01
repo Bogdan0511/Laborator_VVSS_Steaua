@@ -1,0 +1,23 @@
+
+j
+java:S3655¢"LCall "result.isPresent()" or "!result.isEmpty()" before accessing the value.(ÃÇûŞ8ÿúú¦é1
+
+java:S1186h"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¦Ê—8ûú¦é1
+£
+java:S1186D"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ÌÎ”•ûÿÿÿÿ8ûú¦é1
+}
+java:S1450 "[Remove the "errorMessage" field and declare it as a local variable in the relevant methods.(¥åˆüÿÿÿÿ8ƒûú¦é1
+w
+java:S1450""URemove the "partId" field and declare it as a local variable in the relevant methods.(•›™âıÿÿÿÿ8ƒûú¦é1
+q
+java:S1450"TRemove the "scene" field and declare it as a local variable in the relevant methods.(‹ôÒ¡8ƒûú¦é1
+v
+java:S1450"TRemove the "stage" field and declare it as a local variable in the relevant methods.(‹ğÑœıÿÿÿÿ8ƒûú¦é1
+X	java:S125v"<This block of commented-out lines of code should be removed.( ÆüÖ8ûú¦é1
+H	java:S106£"+Replace this use of System.out by a logger.(§ª¬8˜ûú¦é1
+M	java:S106¦"+Replace this use of System.out by a logger.(ùÿèÁøÿÿÿÿ8˜ûú¦é1
+]
+java:S1117²":Rename "partId" which hides the field declared at line 34.(ÂçšÇúÿÿÿÿ8™ûú¦é1
+M	java:S106Í"+Replace this use of System.out by a logger.(Ï³Ìùÿÿÿÿ8œûú¦é1
+L
+java:S1068""*Remove this unused "partId" private field.(•›™âıÿÿÿÿ8ûú¦é1

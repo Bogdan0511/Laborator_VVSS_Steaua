@@ -1,14 +1,17 @@
 
-4squid:S1643”"Use a StringBuilder instead.(ŠÑ‡à
-csquid:S2095Q"LUse try-with-resources or close this "BufferedReader" in a "finally" clause.(ãÈˆ¦
-csquid:S2095"LUse try-with-resources or close this "BufferedReader" in a "finally" clause.(ãÈˆ¦
-dsquid:S2095ˆ"LUse try-with-resources or close this "BufferedWriter" in a "finally" clause.(ù»ı
-?squid:S1148%"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
-?squid:S1148'"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
-?squid:S1148Z"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
-?squid:S1148\"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
-@squid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
-[squid:S2147&"DCombine this catch with the one at line 36, which has the same body.(ï­£Ä
-[squid:S2147["DCombine this catch with the one at line 89, which has the same body.(ï­£Ä
-U
-squid:S106Š"9Replace this use of System.out or System.err by a logger.(Ñ£±Ôúÿÿÿÿ
+:
+java:S1643"Use a StringBuilder instead.(ŠÑ‡à8¤´Õ¦é1
+i
+java:S2095J"LUse try-with-resources or close this "BufferedReader" in a "finally" clause.(ãÈˆ¦8ÕµÕ¦é1
+i
+java:S2095"LUse try-with-resources or close this "BufferedReader" in a "finally" clause.(ãÈˆ¦8ÕµÕ¦é1
+j
+java:S2095"LUse try-with-resources or close this "BufferedWriter" in a "finally" clause.(ù»ı8ÕµÕ¦é1
+]	java:S125"<This block of commented-out lines of code should be removed.(§¨Ö¿úÿÿÿÿ8ÜµÕ¦é1
+a
+java:S2147%"DCombine this catch with the one at line 35, which has the same body.(ï­£Ä8äµÕ¦é1
+]	java:S125D"<This block of commented-out lines of code should be removed.(§¨Ö¿úÿÿÿÿ8ëµÕ¦é1
+a
+java:S2147T"DCombine this catch with the one at line 82, which has the same body.(ï­£Ä8ìµÕ¦é1
+]	java:S125y"<This block of commented-out lines of code should be removed.(§¨Ö¿úÿÿÿÿ8óµÕ¦é1
+M	java:S106ƒ"+Replace this use of System.out by a logger.(Ñ£±Ôúÿÿÿÿ8ôµÕ¦é1

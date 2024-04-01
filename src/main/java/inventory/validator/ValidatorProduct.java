@@ -33,6 +33,8 @@ public class ValidatorProduct implements Validator<Product> {
         if (sumOfParts > product.getPrice()) {
             errorMessage += "Product price must be greater than cost of parts. ";
         }
-        throw new ValidateException(errorMessage);
+        if(!errorMessage.isEmpty()){
+            throw new ValidateException(errorMessage);
+        }
     }
 }
