@@ -134,16 +134,19 @@ public class InventoryRepository {
 			}
 
 			for (Product pr:products) {
-				String line=pr.toString()+",";
+				StringBuilder builder= new StringBuilder();
+				builder.append(pr.toString());
+				builder.append(",");
 				ObservableList<Part> list= pr.getAssociatedParts();
 				int index=0;
 				while(index<list.size()-1){
-					line=line+list.get(index).getPartId()+":";
+					builder.append(list.get(index).getPartId());
+					builder.append(":");
 					index++;
 				}
 				if (index==list.size()-1)
-					line=line+list.get(index).getPartId();
-				bw.write(line);
+					builder.append(list.get(index).getPartId());
+				bw.write(String.valueOf(builder));
 				bw.newLine();
 			}
 			bw.close();

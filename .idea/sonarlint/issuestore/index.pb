@@ -55,3 +55,5 @@ l
 <src/main/java/inventory/controller/ModifyPartController.java,2\b\2be59cab73aba69f05fe8c6ed684b45b480c876c
 l
 <src/main/java/inventory/controller/MainScreenController.java,f\e\fe123040025ffc7790be0315cb187fb9b2631761
+i
+9src/test/java/inventory/service/InventoryServiceTest.java,3\4\34ac316ed4f792bc79db6eea4325c9bc6d64247e
