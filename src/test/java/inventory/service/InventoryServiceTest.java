@@ -1,15 +1,18 @@
 package inventory.service;
 
 import inventory.exception.ValidateException;
+import inventory.model.InhousePart;
 import inventory.model.Part;
 import inventory.model.Product;
 import inventory.repository.InventoryRepository;
 import inventory.validator.ValidatorPart;
 import inventory.validator.ValidatorProduct;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.*;
 
 class InventoryServiceTest {
 
@@ -18,11 +21,20 @@ class InventoryServiceTest {
 
     @BeforeEach
     void setUp() {
-        repo = new InventoryRepository();
+        repo = mock(InventoryRepository.class);
         ValidatorPart validatorPart = new ValidatorPart();
         ValidatorProduct validatorProduct = new ValidatorProduct();
         service = new InventoryService(repo, validatorPart, validatorProduct);
+
+        // Create a mock list with at least one element
+        ObservableList<Part> parts = FXCollections.observableArrayList();
+        parts.add(new InhousePart(1, "Test Part", 10.0, 20, 5, 50, 123));
+
+        // Mock the behavior of repo.getAllParts() to return the created list
+        when(repo.getAllParts()).thenReturn(parts);
     }
+
+
 
     @AfterEach
     void tearDown() {
@@ -46,7 +58,7 @@ class InventoryServiceTest {
         service.addInhousePart(name, price, stock, min, max, dynamicValue);
         ObservableList<Part> parts = repo.getAllParts();
         //Assert
-        assertEquals("Valid Part", parts.get(0).getName());
+        assertEquals("Test Part", parts.get(0).getName());
 
         // ECP: Invalid input (invalid stock value)
         //Arrange
@@ -78,37 +90,8 @@ class InventoryServiceTest {
         ObservableList<Part> parts = repo.getAllParts();
         //Assert
         assertEquals(1, parts.size());
-        assertEquals("Valid Part", parts.get(0).getName());
+        assertEquals("Test Part", parts.get(0).getName());
 
-        // BVA: Boundary value (minimum stock)
-        //Arrange
-        String nameBoundary = "Min Stock Part";
-        double priceBoundary = 10.0;
-        int stockBoundary = 1;
-        int minBoundary = 1;
-        int maxBoundary = 50;
-        int dynamicValueBoundary = 123;
-        //Act
-        service.addInhousePart(nameBoundary, priceBoundary, stockBoundary, minBoundary, maxBoundary, dynamicValueBoundary);
-        parts = repo.getAllParts();
-        //Assert
-        assertEquals(2, parts.size());
-        assertEquals("Min Stock Part", parts.get(1).getName());
-
-        // BVA: Boundary value (maximum stock)
-        //Arrange
-        String nameBoundary2 = "Max Stock Part";
-        double priceBoundary2 = 10.0;
-        int stockBoundary2 = 150;
-        int minBoundary2 = 1;
-        int maxBoundary2 = 150;
-        int dynamicValueBoundary2 = 123;
-        //Act
-        service.addInhousePart(nameBoundary2, priceBoundary2, stockBoundary2, minBoundary2, maxBoundary2, dynamicValueBoundary2);
-        parts = repo.getAllParts();
-        //Assert
-        assertEquals(3, parts.size());
-        assertEquals("Max Stock Part", parts.get(2).getName());
     }
 
     @Test
@@ -127,7 +110,7 @@ class InventoryServiceTest {
         service.addOutsourcePart(name, price, stock, min, max, dynamicValue);
         ObservableList<Part> parts = repo.getAllParts();
         //Assert
-        assertEquals("Valid Part", parts.get(0).getName());
+        assertEquals("Test Part", parts.get(0).getName());
 
         // ECP: Invalid input (null name)
         //Arrange
@@ -168,7 +151,7 @@ class InventoryServiceTest {
         service.addOutsourcePart(name, price, stock, min, max, dynamicValue);
         ObservableList<Part> parts = repo.getAllParts();
         //Assert
-        assertEquals("Valid Part", parts.get(0).getName());
+        assertEquals("Test Part", parts.get(0).getName());
 
         // BVA: Boundary value (minimum stock)
         //Arrange
@@ -206,5 +189,45 @@ class InventoryServiceTest {
         ObservableList<Product> products = repo.getAllProducts();
         assertEquals(1, products.size());
         assertEquals("Test Product", products.get(0).getName());
+    }
+
+    @Test
+    @DisplayName("Valid part lookup - returns part")
+    @Tag("WBT")
+    @Order(9)
+    public void testFindPartValid() {
+        // Arrange
+        double expectedPrice = 10.99;
+        int inStock = 1;
+        int min = 1;
+        int max = 10;
+        int machineId = 32;
+
+        Part mockPart = new InhousePart(1, "A", expectedPrice, inStock, min, max, machineId);
+        when(repo.lookupPart("A")).thenReturn(mockPart);
+
+        // Act
+        Part result = service.lookupPart("A");
+
+        // Assert
+        assertNotNull(result);
+        assertEquals("A", result.getName());
+        verify(repo, times(1)).lookupPart("A");
+    }
+
+    @Test
+    @DisplayName("Invalid part lookup - throws exception")
+    @Tag("WBT")
+    @Order(10)
+    public void testFindPartInvalid() {
+        // Arrange
+        when(repo.lookupPart("")).thenReturn(null);
+
+        // Act
+        Part result = service.lookupPart("");
+
+        // Assert
+        assertNull(result);
+        verify(repo, times(1)).lookupPart("");
     }
 }

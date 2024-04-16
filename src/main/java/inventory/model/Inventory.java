@@ -4,6 +4,8 @@ package inventory.model;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
+import java.util.Objects;
+
 public class Inventory {
     
     // Declare fields
@@ -92,8 +94,13 @@ public class Inventory {
      * @return 
      */
     public Part lookupPart(String searchItem) {
-        for(Part p:allParts) {
-            if(p.getName().contains(searchItem) || (p.getPartId()+"").equals(searchItem)) return p;
+        if(!Objects.equals(searchItem,"")) {
+            for (Part p : allParts) {
+                if (p.getName().contains(searchItem))
+                    return p;
+                if ((p.getPartId() + "").equals(searchItem)) return p;
+            }
+            return null;
         }
         return null;
     }
