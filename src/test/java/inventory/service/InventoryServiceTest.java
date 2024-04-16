@@ -194,7 +194,6 @@ class InventoryServiceTest {
     @Test
     @DisplayName("Valid part lookup - returns part")
     @Tag("WBT")
-    @Order(9)
     public void testFindPartValid() {
         // Arrange
         double expectedPrice = 10.99;
@@ -218,7 +217,6 @@ class InventoryServiceTest {
     @Test
     @DisplayName("Invalid part lookup - throws exception")
     @Tag("WBT")
-    @Order(10)
     public void testFindPartInvalid() {
         // Arrange
         when(repo.lookupPart("")).thenReturn(null);
