@@ -111,7 +111,13 @@
         <artifactId>maven-surefire-plugin</artifactId>
         <version>2.22.1</version>
         <configuration>
-          <!--                <failIfNoTests>false</failIfNoTests>-->
+          <includes>
+            <include>**/*Test.java</include> <!-- Include all classes ending with Test.java -->
+            <include>**/*InventoryServiceTest.java</include> <!-- Include specific test class -->
+            <include>**/*2.java</include>
+            <include>**/*_SRE.java</include>
+            <include>**/*Mock.java</include>
+          </includes>
         </configuration>
       </plugin>
       <plugin>

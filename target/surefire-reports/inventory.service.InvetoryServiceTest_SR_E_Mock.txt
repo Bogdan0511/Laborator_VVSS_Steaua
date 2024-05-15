@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: inventory.service.InvetoryServiceTest_SR_E_Mock
+-------------------------------------------------------------------------------
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.027 s - in inventory.service.InvetoryServiceTest_SR_E_Mock

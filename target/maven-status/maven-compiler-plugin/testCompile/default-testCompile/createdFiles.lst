@@ -1,0 +1,7 @@
+inventory\model\ProductTest.class
+inventory\service\InvetoryServiceTest_SR_E_Mock.class
+inventory\service\InventoryServiceTest_SRE.class
+inventory\service\InventoryServiceTest.class
+inventory\model\InventoryTest.class
+inventory\repository\InventoryRepositoryTest.class
+inventory\service\InventoryServiceTest2.class
