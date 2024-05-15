@@ -18,6 +18,13 @@ public class InventoryService {
         this.validatorProduct = validatorProduct;
     }
 
+    public InventoryService(InventoryRepository repo) {
+        this.repo = repo;
+        this.validatorProduct = new ValidatorProduct();
+        this.validatorPart = new ValidatorPart();
+
+    }
+
     public void addInhousePart(String name, double price, int inStock, int min, int  max, int partDynamicValue) throws ValidateException {
         InhousePart inhousePart = new InhousePart(repo.getAutoPartId(), name, price, inStock, min, max, partDynamicValue);
         validatorPart.validate(inhousePart);

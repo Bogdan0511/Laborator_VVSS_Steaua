@@ -27,9 +27,6 @@ public class ValidatorProduct implements Validator<Product> {
         if(product.getInStock() > product.getMax()) {
             errorMessage += "Inventory level is higher than the maximum value. ";
         }
-        if (product.getAssociatedParts().size() < 1) {
-            errorMessage += "Product must contain at least 1 part. ";
-        }
         if (sumOfParts > product.getPrice()) {
             errorMessage += "Product price must be greater than cost of parts. ";
         }

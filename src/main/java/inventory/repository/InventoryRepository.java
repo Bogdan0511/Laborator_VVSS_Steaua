@@ -118,7 +118,7 @@ public class InventoryRepository {
 
 	public void writeAll() {
 
-		//ClassLoader classLoader = InventoryRepository.class.getClassLoader();
+//		ClassLoader classLoader = InventoryRepository.class.getClassLoader();
 		File file = new File(filename);
 
 		BufferedWriter bw = null;
@@ -157,12 +157,12 @@ public class InventoryRepository {
 
 	public void addPart(Part part){
 		inventory.addPart(part);
-		writeAll();
+		//writeAll();
 	}
 
 	public void addProduct(Product product){
 		inventory.addProduct(product);
-		writeAll();
+		//writeAll();
 	}
 
 	public int getAutoPartId(){

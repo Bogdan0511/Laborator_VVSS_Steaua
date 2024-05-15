@@ -57,3 +57,7 @@ l
 <src/main/java/inventory/controller/MainScreenController.java,f\e\fe123040025ffc7790be0315cb187fb9b2631761
 i
 9src/test/java/inventory/service/InventoryServiceTest.java,3\4\34ac316ed4f792bc79db6eea4325c9bc6d64247e
+`
+0src/test/java/inventory/model/InventoryTest.java,1\7\1727e72bacda923720f502e981a8b45612dcd055
+o
+?src/test/java/inventory/repository/InventoryRepositoryTest.java,3\1\3107fd41d863651a73b5ce7fd2d3c848ab96a919
